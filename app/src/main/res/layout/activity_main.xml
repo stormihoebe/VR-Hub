@@ -15,7 +15,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
     <Button
-        android:id="@+id/button"
+        android:id="@+id/joinButton"
         android:layout_width="347dp"
         android:layout_height="52dp"
         android:text="Join"

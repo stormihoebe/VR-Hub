@@ -9,20 +9,20 @@
     android:paddingTop="16dp"
     android:background="@color/colorPrimaryDark"
 
-    tools:context="com.example.guest.socialnetworking.Contact">
+    tools:context="com.example.guest.socialnetworking.JoinActivity">
 
     <TextView
-        android:id="@+id/ContactText"
+        android:id="@+id/JoinText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contact"
+        android:text="Join"
         android:textColor="@color/colorAccent"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="139dp"
         tools:layout_editor_absoluteY="36dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/NewUserName"
         android:layout_width="292dp"
         android:layout_height="39dp"
         android:background="@color/colorAccent"
@@ -35,7 +35,7 @@
         tools:layout_editor_absoluteY="90dp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/NewUserEmail"
         android:layout_width="292dp"
         android:layout_height="39dp"
         android:background="@color/colorAccent"
@@ -47,31 +47,11 @@
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="141dp" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="293dp"
-        android:layout_height="183dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:background="@color/colorAccent"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="203dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:padding="6dp"
-        android:text="I'm a good robot"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="403dp" />
-
     <Button
         android:id="@+id/button2"
         android:layout_width="352dp"
         android:layout_height="53dp"
-        android:text="Submit"
+        android:text="Join"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="455dp" />
 
