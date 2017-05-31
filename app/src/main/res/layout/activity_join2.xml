@@ -31,7 +31,7 @@
         android:background="@color/colorAccent"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Name"
         android:padding="6dp"
 
         tools:layout_editor_absoluteX="46dp"
@@ -49,8 +49,8 @@
         android:layout_height="39dp"
         android:background="@color/colorAccent"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Email"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
         android:padding="6dp"
 
         tools:layout_editor_absoluteX="46dp"
@@ -73,6 +73,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="81dp" />
+
 
 
 </RelativeLayout>
