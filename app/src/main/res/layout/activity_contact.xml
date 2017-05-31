@@ -80,12 +80,12 @@
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="403dp"
         android:layout_marginBottom="13dp"
-        android:layout_above="@+id/button2"
+        android:layout_above="@+id/ContactSubmitButton"
         android:layout_alignLeft="@+id/editText"
         android:layout_alignStart="@+id/editText" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/ContactSubmitButton"
         android:layout_width="352dp"
         android:layout_height="53dp"
         android:text="Submit"
