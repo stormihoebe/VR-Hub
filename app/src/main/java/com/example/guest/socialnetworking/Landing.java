@@ -3,11 +3,11 @@ package com.example.guest.socialnetworking;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class JoinActivity extends AppCompatActivity {
+public class Landing extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_join2);
+        setContentView(R.layout.activity_landing);
     }
 }

@@ -17,7 +17,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".About" />
-        <activity android:name=".Contact"></activity>
+        <activity android:name=".Contact" />
+        <activity android:name=".JoinActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Landing"></activity>
     </application>
 
 </manifest>
