@@ -10,12 +10,14 @@ import butterknife.ButterKnife;
 
 public class ExploreActivity extends AppCompatActivity {
     @Bind(R.id.ExploreListView) ListView mexploreListView;
-    private String[] messages = new String[]  {"Exciting news in Virtual Reality", "Virtual Reality For Beginners", "Designing Assets for VR/MR", "How to Optimize your mixed reality experience."};
+
+    private String[] messages = new String[] {"Exciting news in Virtual Reality", "Virtual Reality For Beginners", "Designing Assets for VR/MR", "How to Optimize your mixed reality experience."};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
         setContentView(R.layout.activity_explore);
+        ButterKnife.bind(this);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, messages);
         mexploreListView.setAdapter(adapter);
     }
