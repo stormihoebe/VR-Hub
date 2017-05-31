@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class JoinActivity extends AppCompatActivity {
     @Bind(R.id.joinButton) Button mjoinButton;
+    @Bind(R.id.NewUserName) TextView muserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,9 @@ public class JoinActivity extends AppCompatActivity {
         mjoinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = muserName.getText().toString();
                 Intent intent = new Intent(JoinActivity.this, Landing.class);
+                intent.putExtra("name", name);
                 startActivity(intent);
             }
         });

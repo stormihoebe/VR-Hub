@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -13,13 +14,16 @@ public class Landing extends AppCompatActivity {
     @Bind(R.id.contactButton) Button mcontactButton;
     @Bind(R.id.aboutButton) Button maboutButton;
     @Bind(R.id.exploreButton) Button mexploreButton;
+    @Bind(R.id.WelcomeTextView) TextView mwelcomeTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
         ButterKnife.bind(this);
-
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        mwelcomeTextView.setText("Welcome, " + name);
         maboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
