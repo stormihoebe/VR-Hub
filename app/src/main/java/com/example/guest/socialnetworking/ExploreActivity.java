@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,36 +22,46 @@ public class ExploreActivity extends AppCompatActivity {
     @Bind(R.id.ExploreListView) ListView mexploreListView;
     @Bind(R.id.SearchEditText) EditText mSearch;
 
-    private String[] messages = new String[] {"Exciting news in Virtual Reality", "Virtual Reality For Beginners", "Designing Assets for VR/MR", "How to Optimize your mixed reality experience."};
+    public ArrayList<Tweet> mTweets = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_explore);
         ButterKnife.bind(this);
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, messages);
+
         String search = mSearch.getText().toString();
-        mexploreListView.setAdapter(adapter);
         getTweets(search);
     }
 
     private void getTweets(String search){
         final TwitterService twitterService = new TwitterService();
         twitterService.findTweets(search, new Callback() {
+
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    String jsonData = response.body().string();
+            public void onResponse(Call call, Response response) {
+                mTweets = twitterService.processResults(response);
 
-                    Log.v(TAG, jsonData);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                ExploreActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String[] tweetText = new String[mTweets.size()];
+                        for (int i=0; i < tweetText.length; i++) {
+                            tweetText[i] = mTweets.get(i).getText();
+                        }
+
+                        ArrayAdapter adapter = new ArrayAdapter(ExploreActivity.this, android.R.layout.simple_list_item_1, tweetText);
+                        mexploreListView.setAdapter(adapter);
+
+                    }
+                });
+
             }
 
         });
