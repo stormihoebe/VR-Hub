@@ -9,7 +9,7 @@ public class Tweet {
     private String mText;
 
     public Tweet(String text, String time) {
-        this.mText = time;
+        this.mTime = time;
         this.mText = text;
     }
 
