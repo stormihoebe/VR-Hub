@@ -45,6 +45,7 @@
         android:layout_below="@+id/AboutText"
         android:layout_marginTop="23dp"
         android:ems="10"
+        android:textAlignment="center"
         android:inputType="textPersonName"
-        android:hint="Search (Currently Unavailable)" />
+        android:hint="Search Trending VR Topics" />
 </RelativeLayout>
