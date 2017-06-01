@@ -14,6 +14,7 @@ import butterknife.ButterKnife;
 public class JoinActivity extends AppCompatActivity {
     @Bind(R.id.joinButton) Button mjoinButton;
     @Bind(R.id.NewUserName) TextView muserName;
+    @Bind(R.id.NewUserEmail) TextView muserEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,9 @@ public class JoinActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
             String name = muserName.getText().toString();
-                if(name.equals("")){
-                    Toast.makeText(JoinActivity.this, "Please Enter your name", Toast.LENGTH_LONG).show();
+            String email = muserEmail.getText().toString();
+                if(name.equals("") || email.equals("")){
+                    Toast.makeText(JoinActivity.this, "Name & Email Address Required!", Toast.LENGTH_LONG).show();
 
                 }else{
                     Intent intent = new Intent(JoinActivity.this, Landing.class);
