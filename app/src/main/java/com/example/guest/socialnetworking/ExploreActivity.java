@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -18,11 +20,12 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class ExploreActivity extends AppCompatActivity {
+public class ExploreActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = ExploreActivity.class.getSimpleName();
 
     @Bind(R.id.exploreRecyclerView) RecyclerView mexploreRecyclerView;
     @Bind(R.id.SearchEditText) EditText mSearch;
+    @Bind(R.id.goButton) Button mGoButton;
     private TweetListAdapter mAdapter;
 
     public ArrayList<Tweet> mTweets = new ArrayList<>();
@@ -34,7 +37,15 @@ public class ExploreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_explore);
         ButterKnife.bind(this);
         String search = mSearch.getText().toString();
-        getTweets(search);
+        getTweets("");
+        mGoButton.setOnClickListener(this);
+    }
+    @Override
+    public  void onClick(View v) {
+        if(v == mGoButton) {
+            String search = mSearch.getText().toString();
+            getTweets(search);
+        }
     }
 
     private void getTweets(String search){
