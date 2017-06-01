@@ -60,7 +60,6 @@ public class ExploreActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onResponse(Call call, Response response) {
                 mTweets = twitterService.processResults(response);
-
                 ExploreActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

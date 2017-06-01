@@ -1,11 +1,14 @@
 package com.example.guest.socialnetworking;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -48,7 +51,13 @@ public class TwitterService  {
                    JSONObject statusJSON = tweetJSON.getJSONObject(i);
                    String time = statusJSON.getString("created_at");
                    String text = statusJSON.getString("text");
-                   Tweet newTweet = new Tweet(text, time);
+                   String url = "";
+                    if (statusJSON.getJSONObject("entities").getJSONArray("urls").length() == 0){
+                       url = "";
+                   } else {
+                       url = statusJSON.getJSONObject("entities").getJSONArray("urls").getJSONObject(0).getString("url");
+                   }
+                   Tweet newTweet = new Tweet(text, time, url);
                    tweets.add(newTweet);
                }
            }
