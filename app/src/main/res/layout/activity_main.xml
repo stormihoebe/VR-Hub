@@ -3,53 +3,114 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context="com.example.guest.socialnetworking.MainActivity">
+    tools:context="com.example.guest.socialnetworking.ui.MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/hero"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-    <Button
-        android:id="@+id/joinButton"
-        android:layout_width="347dp"
-        android:layout_height="52dp"
-        android:text="Join"
-        tools:layout_editor_absoluteX="19dp"
-        android:background="@color/colorAccent"
+<ImageView
+    android:id="@+id/imageView3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:srcCompat="@drawable/hero"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginTop="0dp"
+    android:layout_marginLeft="0dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:layout_marginRight="8dp"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginBottom="8dp"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintVertical_bias="0.0" />
+<Button
+    android:id="@+id/joinButton"
+    android:layout_width="347dp"
+    android:layout_height="52dp"
+    android:text="Join"
+    android:background="@color/colorAccent"
 
-        tools:layout_editor_absoluteY="179dp"
-        android:layout_marginTop="56dp"
-        android:layout_below="@+id/bannerText2"
-        android:layout_centerHorizontal="true" />
+    android:layout_centerHorizontal="true"
+    android:layout_marginRight="8dp"
+    app:layout_constraintRight_toRightOf="parent"
+    android:layout_marginLeft="8dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintHorizontal_bias="0.523"
+    app:layout_constraintTop_toTopOf="@+id/guideline"
+    android:layout_marginTop="8dp"
+    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+    android:layout_marginBottom="8dp"
+    app:layout_constraintVertical_bias="0.035" />
 
-    <TextView
-        android:id="@+id/bannerText"
-        android:layout_width="wrap_content"
-        android:textSize="40sp"
-        android:layout_height="wrap_content"
-        android:text="vr hub"
-        android:textColor="@color/colorAccent"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="74dp"
-        android:layout_marginTop="27dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+<Button
+    android:id="@+id/signInButton"
+    android:layout_width="347dp"
+    android:layout_height="52dp"
+    android:text="Sign In"
+    android:background="@color/colorAccent"
+    android:layout_marginTop="8dp"
+    app:layout_constraintTop_toBottomOf="@+id/joinButton"
+    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+    android:layout_marginBottom="8dp"
+    android:layout_marginRight="8dp"
+    app:layout_constraintRight_toRightOf="parent"
+    android:layout_marginLeft="8dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintHorizontal_bias="0.523"
+    app:layout_constraintVertical_bias="0.059" />
 
-    <TextView
-        android:id="@+id/bannerText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent"
+<TextView
+    android:id="@+id/bannerText"
+    android:layout_width="wrap_content"
+    android:textSize="40sp"
+    android:layout_height="wrap_content"
+    android:text="vr hub"
+    android:textColor="@color/colorAccent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:layout_constraintBottom_toTopOf="@+id/bannerText2"
+    android:layout_marginRight="8dp"
+    app:layout_constraintRight_toRightOf="parent"
+    android:layout_marginLeft="8dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintHorizontal_bias="0.501"
+    app:layout_constraintVertical_bias="0.896" />
 
-        android:layout_marginTop="22dp"
-        android:text="mixed reality community"
-        android:layout_below="@+id/bannerText"
-        android:layout_centerHorizontal="true" />
+<TextView
+    android:id="@+id/bannerText2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/colorAccent"
+
+    android:text="mixed reality community"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="8dp"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginRight="8dp"
+    app:layout_constraintRight_toRightOf="parent"
+    android:layout_marginLeft="8dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:layout_marginBottom="8dp"
+    app:layout_constraintBottom_toTopOf="@+id/guideline"
+    app:layout_constraintVertical_bias="0.865" />
+
+<android.support.constraint.Guideline
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/guideline"
+    app:layout_constraintGuide_begin="130dp"
+    android:orientation="horizontal" />
+
+
+
+
+</android.support.constraint.ConstraintLayout>
 
 
 </RelativeLayout>

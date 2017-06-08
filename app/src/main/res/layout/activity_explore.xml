@@ -7,7 +7,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.example.guest.socialnetworking.ExploreActivity">
+    tools:context="com.example.guest.socialnetworking.ui.ExploreActivity">
 
     <TextView
         android:id="@+id/AboutText"

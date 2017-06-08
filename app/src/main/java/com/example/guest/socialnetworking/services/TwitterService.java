@@ -1,6 +1,7 @@
-package com.example.guest.socialnetworking;
+package com.example.guest.socialnetworking.services;
 
-import android.util.Log;
+import com.example.guest.socialnetworking.Constants;
+import com.example.guest.socialnetworking.models.Tweet;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -8,7 +9,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 
 import okhttp3.Call;
 import okhttp3.Callback;

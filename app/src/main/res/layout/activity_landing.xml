@@ -10,7 +10,7 @@
     android:paddingTop="16dp"
     android:background="@color/colorPrimaryDark"
 
-    tools:context="com.example.guest.socialnetworking.JoinActivity">
+    tools:context="com.example.guest.socialnetworking.ui.JoinActivity">
     <TextView
         android:id="@+id/WelcomeTextView"
         android:layout_width="wrap_content"

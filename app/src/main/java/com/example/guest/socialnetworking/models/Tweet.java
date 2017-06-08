@@ -1,4 +1,4 @@
-package com.example.guest.socialnetworking;
+package com.example.guest.socialnetworking.models;
 
 /**
  * Created by Guest on 6/1/17.

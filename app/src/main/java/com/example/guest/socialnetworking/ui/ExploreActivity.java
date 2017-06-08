@@ -1,15 +1,17 @@
-package com.example.guest.socialnetworking;
+package com.example.guest.socialnetworking.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+
+import com.example.guest.socialnetworking.R;
+import com.example.guest.socialnetworking.adapters.TweetListAdapter;
+import com.example.guest.socialnetworking.services.TwitterService;
+import com.example.guest.socialnetworking.models.Tweet;
 
 import java.io.IOException;
 import java.util.ArrayList;
