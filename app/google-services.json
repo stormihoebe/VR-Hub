@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "99867076340",
+    "firebase_url": "https://vr-network.firebaseio.com",
+    "project_id": "vr-network",
+    "storage_bucket": "vr-network.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99867076340:android:336513e9e732ac33",
+        "android_client_info": {
+          "package_name": "com.example.guest.socialnetworking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99867076340-nq72pjsr83r96qe90pm1u1tn171v7usg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5tM_X9e8C01YE8b4n6sC7eSDhyeVEqpk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
