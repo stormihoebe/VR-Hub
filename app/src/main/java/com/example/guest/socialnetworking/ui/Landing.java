@@ -80,6 +80,14 @@ public class Landing extends AppCompatActivity {
             Intent intent = new Intent(Landing.this, Contact.class);
             startActivity(intent);
         }
+        if(id == R.id.action_home){
+            Intent intent = new Intent(Landing.this, Landing.class);
+            startActivity(intent);
+        }
+        if(id == R.id.action_explore){
+            Intent intent = new Intent(Landing.this, ExploreActivity.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
     private void logout() {

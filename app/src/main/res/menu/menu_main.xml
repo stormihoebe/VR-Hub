@@ -16,4 +16,14 @@
         android:title="About VR Hub"
         android:visible="true"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_home"
+        android:title="Home"
+        android:visible="true"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_explore"
+        android:title="Explore"
+        android:visible="true"
+        app:showAsAction="never"/>
 </menu>
