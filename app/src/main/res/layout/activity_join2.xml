@@ -94,6 +94,7 @@
         android:layout_width="352dp"
         android:layout_height="53dp"
         android:text="Join"
+        android:textStyle="bold"
         android:layout_marginBottom="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="8dp"
