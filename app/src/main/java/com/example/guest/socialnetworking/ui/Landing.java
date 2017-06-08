@@ -19,10 +19,11 @@ import com.google.firebase.auth.FirebaseUser;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class Landing extends AppCompatActivity {
+public class Landing extends AppCompatActivity implements View.OnClickListener{
 
     @Bind(R.id.exploreButton) Button mexploreButton;
     @Bind(R.id.WelcomeTextView) TextView mwelcomeTextView;
+    @Bind(R.id.messagesButton) Button mMessageButton;
 
 
     private FirebaseAuth mAuth;
@@ -49,13 +50,21 @@ public class Landing extends AppCompatActivity {
             }
         };
 
-        mexploreButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Landing.this, ExploreActivity.class);
-                startActivity(intent);
-            }
-        });
+        mexploreButton.setOnClickListener(this);
+        mMessageButton.setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View view) {
+        if (view == mexploreButton) {
+            Intent intent = new Intent(Landing.this, ExploreActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        if (view == mMessageButton) {
+            Intent intent = new Intent(Landing.this, MessagesActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     @Override
