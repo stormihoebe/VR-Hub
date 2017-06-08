@@ -20,8 +20,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class Landing extends AppCompatActivity {
-    @Bind(R.id.contactButton) Button mcontactButton;
-    @Bind(R.id.aboutButton) Button maboutButton;
+
     @Bind(R.id.exploreButton) Button mexploreButton;
     @Bind(R.id.WelcomeTextView) TextView mwelcomeTextView;
 
@@ -42,31 +41,14 @@ public class Landing extends AppCompatActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     mwelcomeTextView.setText("Welcome, " + user.getDisplayName() + "!");
-                    Log.d("HEY", user.getDisplayName());
 
                 } else {
-
                     Log.d("HEY", "user is NULL");
 
                 }
             }
         };
 
-
-        maboutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Landing.this, About.class);
-                startActivity(intent);
-            }
-        });
-        mcontactButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Landing.this, Contact.class);
-                startActivity(intent);
-            }
-        });
         mexploreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +71,14 @@ public class Landing extends AppCompatActivity {
         if (id == R.id.action_logout) {
             logout();
             return true;
+        }
+        if(id == R.id.action_about) {
+            Intent intent = new Intent(Landing.this, About.class);
+            startActivity(intent);
+        }
+        if(id == R.id.action_contact){
+            Intent intent = new Intent(Landing.this, Contact.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

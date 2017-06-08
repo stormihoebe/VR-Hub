@@ -6,4 +6,14 @@
         android:title="Logout"
         android:visible="true"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_contact"
+        android:title="Contact Admin"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:title="About VR Hub"
+        android:visible="true"
+        app:showAsAction="never"/>
 </menu>
