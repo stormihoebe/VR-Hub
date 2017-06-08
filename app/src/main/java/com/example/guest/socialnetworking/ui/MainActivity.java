@@ -13,27 +13,34 @@ import com.example.guest.socialnetworking.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
-    private TextView mBannerText;
-    private TextView mBannerText2;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    @Bind(R.id.bannerText) TextView mBannerText;
+    @Bind(R.id.bannerText2) TextView mBannerText2;
     @Bind(R.id.joinButton) Button mjoinButton;
+    @Bind(R.id.signInButton) Button msigntInButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mBannerText = (TextView) findViewById(R.id.bannerText);
-        mBannerText2 = (TextView) findViewById(R.id.bannerText2);
         ButterKnife.bind(this);
+
         Typeface crash = Typeface.createFromAsset(getAssets(), "fonts/crash.ttf");
         mBannerText.setTypeface(crash);
         mBannerText2.setTypeface(crash);
-        mjoinButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, JoinActivity.class);
-                startActivity(intent);
-            }
-        });
+
+        mjoinButton.setOnClickListener(this);
+        msigntInButton.setOnClickListener(this);
+
+    }
+    public  void onClick(View v) {
+        if(v == mjoinButton) {
+            Intent intent = new Intent(MainActivity.this, JoinActivity.class);
+            startActivity(intent);
+        }
+        if(v == msigntInButton) {
+            Intent intent = new Intent(MainActivity.this, Login.class);
+            startActivity(intent);
+        }
     }
 }
