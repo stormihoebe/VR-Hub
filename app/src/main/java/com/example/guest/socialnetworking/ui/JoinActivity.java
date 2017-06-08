@@ -70,6 +70,7 @@ public class JoinActivity extends AppCompatActivity implements View.OnClickListe
         if (view == mjoinButton) {
             createNewUser();
         }
+
     }
 
     private void createAuthStateListener() {
