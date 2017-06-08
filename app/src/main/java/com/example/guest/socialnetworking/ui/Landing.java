@@ -1,8 +1,10 @@
 package com.example.guest.socialnetworking.ui;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.guest.socialnetworking.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,14 +25,34 @@ public class Landing extends AppCompatActivity {
     @Bind(R.id.exploreButton) Button mexploreButton;
     @Bind(R.id.WelcomeTextView) TextView mwelcomeTextView;
 
+
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
         ButterKnife.bind(this);
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        mwelcomeTextView.setText("Welcome, " + name);
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener(){
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    mwelcomeTextView.setText("Welcome, " + user.getDisplayName() + "!");
+                    Log.d("HEY", user.getDisplayName());
+
+                } else {
+
+                    Log.d("HEY", "user is NULL");
+
+                }
+            }
+        };
+
+
         maboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,5 +98,18 @@ public class Landing extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 }
