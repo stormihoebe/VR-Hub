@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_logout"
+        android:title="Logout"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_contact"
+        android:title="Contact Admin"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:title="About VR Hub"
+        android:visible="true"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_home"
+        android:title="Home"
+        android:visible="true"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_explore"
+        android:title="Explore"
+        android:visible="true"
+        app:showAsAction="never"/>
+</menu>

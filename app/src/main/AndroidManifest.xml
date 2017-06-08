@@ -11,29 +11,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".About" />
-        <activity android:name=".Contact" />
-        <activity android:name=".JoinActivity">
+        <activity android:name=".ui.About" />
+        <activity android:name=".ui.Contact" />
+        <activity android:name=".ui.JoinActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Landing" />
-        <activity android:name=".ExploreActivity" />
+        <activity android:name=".ui.Landing" />
+        <activity android:name=".ui.ExploreActivity" />
 
         <service
-            android:name=".TwitterService"
+            android:name=".services.TwitterService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity android:name=".ui.Login"></activity>
     </application>
 
 </manifest>

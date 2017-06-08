@@ -9,7 +9,7 @@
     android:paddingTop="16dp"
     android:background="@color/colorPrimaryDark"
 
-    tools:context="com.example.guest.socialnetworking.Contact">
+    tools:context="com.example.guest.socialnetworking.ui.Contact">
 
     <TextView
         android:id="@+id/ContactText"

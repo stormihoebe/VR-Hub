@@ -1,4 +1,4 @@
-package com.example.guest.socialnetworking;
+package com.example.guest.socialnetworking.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
+import com.example.guest.socialnetworking.R;
+import com.example.guest.socialnetworking.models.Tweet;
+
 import java.util.ArrayList;
 
 import butterknife.Bind;
