@@ -5,11 +5,11 @@ import org.parceler.Parcel;
 /**
  * Created by Guest on 6/8/17.
  */
-// TODO: 6/8/17  Save and retrieve data using Firebase, making sure to structure your data according to Firebase guidelines.
-// TODO: 6/8/17  Employ the Firebase-RecyclerAdapter to display from your database.
-// TODO: 6/8/17 Use SharedPreferences to save an important piece of data in your app. 
+// TODO: 6/8/17  Save and retrieve data using Firebase, making sure to structure your data according to Firebase guidelines. (Save messages to community message board);
+// TODO: 6/8/17  Employ the Firebase-RecyclerAdapter to display from your database. (message board)
+// TODO: 6/8/17 Use SharedPreferences to save an important piece of data in your app. (save username?)
 // TODO: 6/8/17 Update README 
-// TODO: 6/8/17  Implicit Intent
+// TODO: 6/8/17  Implicit Intent (send message in contact)
 
 @Parcel
 public class Message {
