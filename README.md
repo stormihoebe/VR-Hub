@@ -1,9 +1,12 @@
 # VR Hub
 
-VR Hub is a social media platform for Virtual Reality/Augmented Reality/Mixed Reality enthusiasts, developers, and designers.
+VR Hub is a social media platform for Virtual Reality/Augmented Reality/Mixed Reality enthusiasts, developers, and designers. 
 
 ## Details
-This application is under active development and current features are minimal and changing daily.
+This application is under active development and current features are changing daily. This app allows users to sign up
+ for access to the app using an email address and password. The App allows users to post messages on a community message board 
+  that utilizes a firebase database. The App also uses the Twitter API to display tweets with #VirtualReality and users have the 
+  ability to search for other keywords under #VirtualReality.
 
 ## Installation
 * `git clone <https://github.com/stormihoebe/VR-Hub.git>`
@@ -36,20 +39,14 @@ TwitterTokenSecret = "XXXXXXXXXXXXXXXXXXXXXXXXXX"
 ## Running
 * Follow the APU Credentials steps above.
 * Run 'app' on Android Emulator
+* Sign up for an account with a valid email address and 6+ digit password. 
 
-
-
-## Future Details
-* VR Hub will use Twitter API to source current topics in VR
-* Users will be able to create accounts
-* Users will be able to interact with each other
-* Users will be able to search specific topics/areas  
+ 
 
 ## Current Bugs
-* All features are limited
-* Sign-in form does not generate actual account
-* API is not linked, no searches can be conducted
-* Contact form does not send actual message
+* Login/Join: User is currently prompted to sign in/ join regardless if the device is already signed into the account. Clicking 
+either login or join will lead the user to the landing page if they are already signed on. 
+* App does not record author to messages when they are posted at this time. 
 
 
 
