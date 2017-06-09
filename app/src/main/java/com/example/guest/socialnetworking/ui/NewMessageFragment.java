@@ -31,7 +31,7 @@ public class NewMessageFragment extends DialogFragment implements View.OnClickLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_message_form, container, false);
-        getDialog().setTitle("Topic Fragment");
+        getDialog().setTitle("Message Fragment");
         mMessageEditText = (EditText) rootView.findViewById(R.id.messageEditText);
         mTitleEditText = (EditText) rootView.findViewById(R.id.titleEditText);
         mSubmitButton = (Button) rootView.findViewById(R.id.submitMessageButton);
