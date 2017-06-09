@@ -3,13 +3,18 @@ package com.example.guest.socialnetworking.ui;
 import android.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.guest.socialnetworking.R;
+import com.example.guest.socialnetworking.adapters.FirebaseMessageViewHolder;
+import com.example.guest.socialnetworking.models.Message;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -31,6 +36,8 @@ public class MessagesActivity extends AppCompatActivity implements View.OnClickL
 
         mAddMessageButton.setOnClickListener(this);
 
+        mMessageReference = FirebaseDatabase.getInstance().getReference().child("messages");
+        setUpFirebaseAdapter();
     }
 
     @Override
@@ -40,6 +47,22 @@ public class MessagesActivity extends AppCompatActivity implements View.OnClickL
             NewMessageFragment newMessageFragment = new NewMessageFragment();
             newMessageFragment.show(fm, "Message Fragment");
         }
+    }
+
+    private void setUpFirebaseAdapter() {
+        mFirebaseAdapter = new FirebaseRecyclerAdapter<Message, FirebaseMessageViewHolder>
+                (Message.class, R.layout.message_list_item, FirebaseMessageViewHolder.class, mMessageReference) {
+
+            @Override
+            public void populateViewHolder(FirebaseMessageViewHolder viewHolder, Message model, int position) {
+
+                viewHolder.bindTopic(model);
+            }
+        };
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(mFirebaseAdapter);
+        Log.d("reference", mMessageReference.getKey());
     }
 
 }

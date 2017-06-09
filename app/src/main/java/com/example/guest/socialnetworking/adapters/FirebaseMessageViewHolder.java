@@ -54,54 +54,54 @@ public class FirebaseMessageViewHolder extends RecyclerView.ViewHolder implement
 
     @Override
     public void onClick(View view){
-        final ArrayList<Message> topics = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("messages");
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-
-
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    topics.add(snapshot.getValue(Message.class));
-                }
-
-
-                int itemPosition = getLayoutPosition();
-
-                Intent intent = new Intent(mContext, MessageDetailActivity.class);
-                intent.putExtra("position", itemPosition);
-                intent.putExtra("messages", Parcels.wrap(topics));
-
-                mContext.startActivity(intent);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-        ref.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String previousChildKey) {
-                Log.d("Child Listener", dataSnapshot.getKey());
-            }
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {}
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+//        final ArrayList<Message> topics = new ArrayList<>();
+//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("messages");
+//        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+//
+//
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+//                    topics.add(snapshot.getValue(Message.class));
+//                }
+//
+//
+//                int itemPosition = getLayoutPosition();
+//
+//                Intent intent = new Intent(mContext, MessageDetailActivity.class);
+//                intent.putExtra("position", itemPosition);
+//                intent.putExtra("messages", Parcels.wrap(topics));
+//
+//                mContext.startActivity(intent);
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+//        ref.addChildEventListener(new ChildEventListener() {
+//            @Override
+//            public void onChildAdded(DataSnapshot dataSnapshot, String previousChildKey) {
+//                Log.d("Child Listener", dataSnapshot.getKey());
+//            }
+//            @Override
+//            public void onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {}
+//
+//            @Override
+//            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+//
+//            }
+//
+//            @Override
+//            public void onChildRemoved(DataSnapshot dataSnapshot) {
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:weightSum="1"
     android:layout_marginBottom="20dp">
 
@@ -9,11 +9,11 @@
         android:id="@+id/messageTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="8dp"
         android:text="Topic Title"
+        android:textStyle="bold"
         android:textColor="@color/colorAccent"
         android:textSize="20sp"/>
 
@@ -21,9 +21,11 @@
         android:id="@+id/messageMessageTextView"
         android:layout_width="339dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:text="text"
         android:textColor="@color/colorAccent"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_weight="0.42" />
 
 </LinearLayout>
