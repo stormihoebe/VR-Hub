@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.guest.socialnetworking.R;
 import com.example.guest.socialnetworking.models.Message;
 import com.example.guest.socialnetworking.ui.MessageDetailActivity;
 import com.google.firebase.database.ChildEventListener;
