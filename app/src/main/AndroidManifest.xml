@@ -36,7 +36,8 @@
             android:exported="true" />
 
         <activity android:name=".ui.Login" />
-        <activity android:name=".ui.MessagesActivity"></activity>
+        <activity android:name=".ui.MessagesActivity" />
+        <activity android:name=".ui.MessageDetailActivity"></activity>
     </application>
 
 </manifest>
