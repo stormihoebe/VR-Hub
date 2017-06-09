@@ -16,15 +16,14 @@ public class Message {
     String title;
     String body;
     String author;
-    String uID;
 
     public Message() {}
 
-    public Message (String title, String body, String author, String uid){
+    public Message (String title, String body, String author){
         this.title = title;
         this.body = body;
         this.author = author;
-        this.uID = uid;
+
     }
 
     public String getAuthor() {
@@ -39,7 +38,4 @@ public class Message {
         return body;
     }
 
-    public String getuID() {
-        return uID;
-    }
 }
