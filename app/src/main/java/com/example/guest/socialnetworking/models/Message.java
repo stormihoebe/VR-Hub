@@ -16,6 +16,7 @@ public class Message {
     String title;
     String body;
     String author;
+    String id;
 
     public Message() {}
 
@@ -38,4 +39,7 @@ public class Message {
         return body;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 }
