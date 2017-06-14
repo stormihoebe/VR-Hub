@@ -1,10 +1,12 @@
 package com.example.guest.socialnetworking.ui;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -33,6 +35,7 @@ public class ExploreActivity extends AppCompatActivity implements View.OnClickLi
     @Bind(R.id.exploreRecyclerView) RecyclerView mexploreRecyclerView;
     @Bind(R.id.SearchEditText) EditText mSearch;
     @Bind(R.id.goButton) Button mGoButton;
+    @Bind(R.id.twitterButton) Button mTwitterButton;
     private TweetListAdapter mAdapter;
 
     public ArrayList<Tweet> mTweets = new ArrayList<>();
@@ -46,12 +49,19 @@ public class ExploreActivity extends AppCompatActivity implements View.OnClickLi
         String search = mSearch.getText().toString();
         getTweets("");
         mGoButton.setOnClickListener(this);
+        mTwitterButton.setOnClickListener(this);
     }
     @Override
     public  void onClick(View v) {
         if(v == mGoButton) {
             String search = mSearch.getText().toString();
             getTweets(search);
+        }
+        if (v ==mTwitterButton){
+            Uri webpage = Uri.parse("https://twitter.com/search?q=%23VirtualReality&src=tyah");
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+            startActivity(webIntent);
+
         }
     }
 
