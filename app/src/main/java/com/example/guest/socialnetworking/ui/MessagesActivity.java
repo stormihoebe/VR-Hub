@@ -7,8 +7,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
+import com.example.guest.socialnetworking.BounceInterpolator;
 import com.example.guest.socialnetworking.R;
 import com.example.guest.socialnetworking.adapters.FirebaseMessageViewHolder;
 import com.example.guest.socialnetworking.models.Message;
@@ -33,6 +36,10 @@ public class MessagesActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_messages);
 
         ButterKnife.bind(this);
+        BounceInterpolator interpolator = new BounceInterpolator(0.2, 20);
+        final Animation bounceAnim = AnimationUtils.loadAnimation(this,R.anim.bounce);
+        mAddMessageButton.startAnimation(bounceAnim);
+        bounceAnim.setInterpolator(interpolator);
 
         mAddMessageButton.setOnClickListener(this);
 
@@ -46,6 +53,16 @@ public class MessagesActivity extends AppCompatActivity implements View.OnClickL
             FragmentManager fm = getFragmentManager();
             NewMessageFragment newMessageFragment = new NewMessageFragment();
             newMessageFragment.show(fm, "Message Fragment");
+
+            BounceInterpolator interpolator = new BounceInterpolator(0.2, 20);
+            final Animation bounceAnim = AnimationUtils.loadAnimation(this,R.anim.bounce);
+            mAddMessageButton.startAnimation(bounceAnim);
+            bounceAnim.setInterpolator(interpolator);
+
+            mAddMessageButton.setOnClickListener(this);
+
+            mMessageReference = FirebaseDatabase.getInstance().getReference().child("messages");
+            setUpFirebaseAdapter();
         }
     }
 
