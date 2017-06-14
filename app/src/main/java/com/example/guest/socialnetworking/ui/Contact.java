@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -28,6 +30,8 @@ public class Contact extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
         ButterKnife.bind(this);
+        final Animation slideAnim = AnimationUtils.loadAnimation(this, R.anim.slide);
+
         mcontactSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +42,8 @@ public class Contact extends AppCompatActivity {
                     Toast.makeText(Contact.this, "Please Fill Out All Fields", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(Contact.this, "Thank you!", Toast.LENGTH_LONG).show();
+                    v.startAnimation(slideAnim);
+                    v.setVisibility(View.INVISIBLE);
                 }
             }
         });
