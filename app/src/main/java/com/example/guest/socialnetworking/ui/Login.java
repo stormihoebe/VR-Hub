@@ -2,6 +2,8 @@ package com.example.guest.socialnetworking.ui;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +30,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.userPasswordEditText) EditText mPasswordEditText;
     @Bind(R.id.LoginButton) Button mLoginButton;
 
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+    private String mRecentAddress;
+
+
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth mAuth;
     private ProgressDialog mAuthProgressDialog;
@@ -38,6 +45,16 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+        mRecentAddress = mSharedPreferences.getString("email", null);
+
+        if (mRecentAddress != null) {
+            mEmailEditText.setText(mRecentAddress);
+        }
+
+
         createAuthProgressDialog();
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -72,7 +89,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             finish();
         }
         if (view == mLoginButton) {
+            String email = mEmailEditText.getText().toString().trim();
+            addToSharedPreferences(email);
             loginWithPassword();
+
         }
     }
     private void loginWithPassword() {
@@ -115,5 +135,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
+    }
+    private void addToSharedPreferences(String savedEmail) {
+        mEditor.putString("email", savedEmail).apply();
     }
 }
